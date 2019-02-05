@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\newtheorem{definisjon}{Definisjon}[section]
+\newtheorem{preposisjon}{Preposisjon}[section]
+\newtheorem{eksempel}{Eksempel}[section]
+\newtheorem{teorem}{Teorem}[section]
+
+\title{Bacheloroppgave}
+\author{info }
+\date{January 2019}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Affine}{\mathbb{A}}
+\newcommand{\Projective}{\mathbb{P}}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\section{Algebra}
+\section{Algebraisk Geometri}
+\subsection{Generelt}
+\input{algebraisk_geometri.tex}
+\subsection{Kurver}
+\input{kurver.tex}
+\subsection{Rasjonelle avbildinger}
+\input{rasjonelle_avbildinger.tex}
+\section{Elliptiske kurver}
+\subsection{Weierstrass form}
+\subsection{Invarianter}
+\subsection{Torsionundergrupper}
+Hva er dette, hvordan fungerer de.
+Hvorfor har vi $E[l]$ der $l$ deler $[E]$
+
+Hva er en supersingulær elliptisk kurve, finnes det alltid en slik?
+\section{Isogenier}
+\input{isogenier.tex}
+\subsection{Multiplikasjon med n-avbilding}
+\subsection{Separabilitet}
+Hvorfor kan man skrive $\phi = \phi_0 \circ \phi_1 \circ \ldots \circ \phi_n$?
+\subsection{Kjerne}
+Hva i all verden er $E/Ker(\phi)$?
+\subsection{Konstruksjon/algoritmer?}
+Hvordan lager man $\phi$ fra denne kjernen. Fokus på metoden som brukes i SIDH eller CSIDH
+\section{SIDH/CSIDH}
+Avhengig av hvilken protokoll, se på hvordan den fungerer og hva den er basert på
+\section{Sikkerhet}
+Hvorfor er dette sikkert/vanskelig å knekke.
+\section{Implementering og ytelse}
+
+
+\end{document}

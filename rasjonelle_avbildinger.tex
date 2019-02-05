@@ -1,0 +1,71 @@
+Funksjonskropp, hva er en rasjonell avbilding. Når er dette en morfi?
+
+\begin{definisjon}
+koordinatringen $K[V] = K[X_0, \ldots, X_n] / I(V)$ er ganske enkelt et integritetsområde av polynomer. 
+
+\textbf{Merk:} Siden vi i all hovedsak kun er interessert i varieteter generert av ett enkelt polynom, så vil i praksis koordinatringen være alle polynomer modulo dette polynomet.
+\end{definisjon}
+
+\begin{definisjon}
+Funksjoneskroppen $K(V)$, der $V$ er kurven definert av polynomet $f(x,y,z) = 0$, inneholder alle rasjonale funksjoner $g/h$ ($h \neq 0$) der følgende gjelder:
+\begin{enumerate}[noitemsep]
+    \item $g,h$ homogene polynomer i $k[x,y,z]$ av samme grad.
+    \item $h$ er ikke i idealet $I(V)$
+    \item $f_1/g_1$ og $f_2/g_2$ er ekvivalente dersom $f_1g_2 - f_2g_1 \in I(V)$
+\end{enumerate}
+\end{definisjon}
+\textbf{Merk:} Vi ønsker polynomer av samme grad siden punktene i det projektive planet er ekvivalensklasser. Så når vi evaluerer et punkt ved å ta en representant, for eksempel $(\lambda x, \lambda y, \lambda z )$ vil vi at det skal være velldefinert, altså ha samme verdi som $(x,y,z)$. Dette ordner seg greit siden $\frac{f(\lambda x, \lambda y, \lambda z)}{ g(\lambda x, \lambda y, \lambda z)} = \frac{\lambda^d f(x, y, z)}{\lambda^d g(f,y,z)} = \frac{f(x,y,z)}{g(x,y,z)}$
+
+
+\begin{definisjon}
+En rasjonell avbilding fra en projektiv varietet $V_1$ til $V_2$ er ganske enkelt en avbilding på formen
+$$ \phi: V_1 \rightarrow V_2 \text{, } \phi = [f_0, \ldots, f_n] $$ der $f_i \in \overline{K}(V_1)$ og $f_i$ er veldefinert for alle punkter $P \in V_1$. og $$\phi(P) \neq 0$ 
+$$ \phi(P) = [f_0(P), \ldots, f_n(P)] \in V_2 $$
+\end{definisjon}
+
+\begin{definisjon}
+En rasjonell avbilding er definert i et punkt $P \in V_1$ hvis det eksisterer et polynom $g \in \overline{K}(V_1)$ slik at 
+\begin{enumerate}[noitemsep]
+    \item $g f_i$ er veldefinert i punktet $P$
+    \item Det finnes en $i$ slik at $(gf_i)(P) \neq 0$
+\end{enumerate}
+Vi skriver så $$ \phi(P) = [(gf_0)(P), \ldots, (gf_n)(P)] $$
+\end{definisjon}
+
+Legg merke til at definisjonen over tillater at $(f_0(x), f_1(y), f_2(z))$ ikke er velldefinert så lenge det finnes ett polynom, g,  i funksjonskroppen til $V_1$ slik at $((g \circ f_0)(x), (g \circ f_1)(y), (g \circ f_2)(z))$ er velldefinert. Med andre ord er $\phi$ kun unik opp til skalarmultiplikasjon med elementer fra funksjonskroppen.
+
+\begin{eksempel} La $V$ være varieteten til kurva over det projektive planet definert fra polynomet $f(X, Y, Z) = X^2 + Y^2 - Z^2$
+$$\phi: V \rightarrow \Projective^2$$
+$$\phi: [X, Y, Z] \mapsto [X-Z, Y]$$
+
+Her vil $[1, 0, 1]$ virke udefinert da $\phi(1,0,1) = [0,0] = \phi(0,0,0)$, men la oss trikse litt modulo $V$. $(X^2 - Z^") = (X-Z)(X+Z)$, så polynomet $(X+z)$ er en naturlig kandidat.
+
+\begin{align*}
+    [(X-Z)(X+Z), Y(X-Z)] = [X^2 - Z^2, Y(X+Z)] \\
+\equiv [Y^2, Y(X+Z)] = [Y, (X+Z)] \mod{(X^2+Y^2-Z^2)}
+\end{align*}
+
+Med denne "nye" avbildingen har vi $[Y, (X+Y)] = [0,2] = [0,1] \neq [0,0] $, så $\phi$ er definert i $[1,0,1]$
+\end{eksempel}
+
+
+\begin{definisjon}
+Dersom en rasjonell avbilding er definert i alle punkt $P$ i $V_1$ er den en morfisme.
+\end{definisjon}
+
+\begin{teorem}
+Dersom $C_1$ er en glatt projektiv kurve vil alle rasjonelle avbildinger fra $C_1$ til en projektiv kurve $C_2$ være morfier.
+\end{teorem}
+
+\begin{definisjon}
+Vi sier at to varieteter er isomorfe dersom det finnes en morfi $\phi: V_1 \rightarrow V_2$ og en morfi $\psi V_2 \rightarrow V_1$ slik at $\phi \circ \psi$ og $\psi \circ \phi$ er identitetsavbildinger på $V_2 og V_1$. 
+\end{definisjon}
+
+
+\begin{teorem}
+\label{morfi konstant eller surjektiv}
+La $\phi: C_1 \rightarrow C_2$ være en morfi mellom to kurver. Da er enten $\phi$ konstant eller surjektiv.
+
+Bevis:
+Se [243, I \$5, theorem 4]
+\end{teorem}

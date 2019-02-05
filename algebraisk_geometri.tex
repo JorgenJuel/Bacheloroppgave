@@ -1,0 +1,54 @@
+Siden vi skal se nærmere på geometriske aspekter gjennom algebra trenger vi å definere noen grunnleggende strukturer. Hva er egentlig et punkt når det kommer til algebra, og hva er en kurve?
+
+\begin{definisjon}
+Et \textbf{affint n-rom} $$ \Affine ^n = \Affine^n(\overline{K}) = \{P = (x_1, \ldots, x_n ) \in \overline{K}^n \}$$
+\end{definisjon}
+
+Et projektivt rom har en litt mer komplisert definisjon som baserer seg på ekvivalensklasser. Her sier vi at to (n+1)-tupler $(x_0, \ldots, x_n)$ og $(y_0, \ldots, y_n)$ er ekvivalente dersom det finnes et element $\lambda \in \overline{K}^*$ slik at $(\lambda x_0, \ldots, \lambda x_n) = (y_0, \ldots, y_n)$.
+
+Denne ekvivalensklassen skriver vi som $[x_0, \ldots, x_n]$
+\begin{definisjon}
+    Et \textbf{projektivt n-rom} $\Projective$ over $K$ består av $(n+1)$-tupler $$\Projective^n = \Projective^n(\overline{K}) = \{[x_0, \ldots, x_n] | (x_0, \ldots, x_n) \in \Affine ^{n+1}\}$$
+\end{definisjon}
+
+Siden vi her kun er opptatt av underrom av $\Projective^2$ trenger vi kun å tenke på punkter på formen $[x_0, x_2, x_3]$ og vi skriver det ofte som $[x, y, z]$ for å lettere skille mellom variablene.
+
+Når vi snakker om punkter i det projektive rommet er det vanlig å skille mellom de tilhørende affine koordinatene som tilhører ekvivalensklassen $[x, y, 0]$ og punktene i uendeligheten som tilhører $[x, y, 1]$
+
+Med andre ord finnes det en naturlig relasjon mellom projektive og affine rom. Når vi senere snakker om homogene polynomer lager vi oss dette ved å ganske enkelt introdusere en til variabel og multiplisere den inn slik at alle leddene har samme grad. På denne måten kan vi velge om vi vil snakke om projektive eller affine rom.
+
+\begin{definisjon}
+En \textbf{algebraisk delmengde} $X \subset \Affine^n$ eller $X \subset \Projective^n$ er nettopp en delmengde av punktene (eller ekvivalsensklassene) til rommet.
+\end{definisjon}
+Fra denne delmengden kan vi generere et ganske viktig ideal som sier noe om hva som lager delmengde. 
+\begin{definisjon}
+    La $V$ være en algebraisk delmengde. \textbf{Idealet til $V$}, $$I(V) = \langle \{f \in \overline{K}[x_1, \ldots, x_n] | f(P) = 0, \forall P \in V \} \rangle$$
+\end{definisjon}
+
+\begin{eksempel}
+La $V = \{(x,x) | x \in \mathbb{R} \} \subset \Affine{\mathbb{R}}^2$. Da vil idealet til $V$, $I(V)$ være linja gjennom origo med stigningstall en, altså $$I(V) = \langle  Y - X  \rangle $$
+
+\end{eksempel}
+
+\begin{definisjon}
+La $V$ være en algebraisk delmengde, og $I(V)$ være idealet til $V$. Da er $V$ en \textbf{algebraisk varietet} hvis $I(V)$ er et generert av irredusible polynomer i $\overline{K}[X_1, \ldots, X_n]$
+\end{definisjon}
+\iffalse
+\begin{definisjon}
+En algebraisk mengde $V$ er ganske enkelt alle nullpunktene til polynomene i $V$. $$V = \{P \in \Affine^n | f(P) = 0 \forall f \in V \} $$ Eller tilsvarende for $\Projective$, bare at polynomene i tillegg må være homogene (alle leddene må ha samme grad)
+\end{definisjon}
+Merk: Når vi ser på en projektiv varietet så har vi ikke lenger punkter på samme måte som i det affine rommet, men i stedet har vi en ekvivalensklasse med punkter. Måten vi løser dette på er å ta en representant for ekvivalensklassen (altså et punkt). Det viser seg nemlig at dersom $f(P) = 0$ i en slik representant, så er også $ f(\lambda P) = 0$ så lenge funksjonen $f$ er homogen, så alle andre representanter vil også være null.
+
+\begin{definisjon}
+Til en algebraisk mengde $V$ har vi et tilhørende ideal $$ I(V)= \{f \in \overline{K}[X] | f(p) = 0 \forall p \in V\}$$
+\end{definisjon}
+
+\begin{definisjon}
+Vi sier at en algebraisk mengde $V$, affint eller projektiv, er en varietet dersom idealet $I(V)$ er pimitivt i $\overline{K}[X]$. Vi skriver ofte $V/K$ dersom $V$ er en varietet definert over $K$.
+\end{definisjon}
+
+\endif
+
+\begin{definisjon}
+Dimensjonen til en projektiv varietet er dimensjonen til den tilsvarende affine varieteten, nemlig $V \cap \Affine ^n$
+\end{definisjon}
